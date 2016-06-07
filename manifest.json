@@ -7,12 +7,9 @@
         "128": "128.png"
     },
     "app": {
-        "urls": [
-            "http://simonecingano.it/"
-        ],
-        "launch": {
-            "web_url": "http://simonecingano.it/apps/html5-calculator/"
+        "background": {
+            "scripts": ["background.js"]
         }
     },
-    "permissions": [],
+    "permissions": []
 }
