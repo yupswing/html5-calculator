@@ -1,10 +1,10 @@
 /*
 
-html5-calculator by Simone Cingano
+QuickCalc by Simone Cingano
 A simple calculator written in pure HTML5
 Licence: MIT
 Version: 1.0
-Repository: https://github.com/yupswing/html5-calculator
+Repository: https://github.com/yupswing/quickalc
 
 */
 
