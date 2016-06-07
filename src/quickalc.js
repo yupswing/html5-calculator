@@ -64,8 +64,8 @@ function operator(op, opequal) {
     has_to_all_clear = true;
     if (is_error) return;
     if (!opequal && !is_last_operator_equal && has_to_show_registry_main) {
-      // avoid multi operator (example: x+*...)
-      return;
+        // avoid multi operator (example: x+*...)
+        return;
     }
 
     if (isNull(registry_main) && isNull(buffer_input)) {
@@ -446,31 +446,85 @@ $(function() {
                 break;
         }
     });
-    $('.button_0').on('click',function(){ inputNumber(0); });
-    $('.button_1').on('click',function(){ inputNumber(1); });
-    $('.button_2').on('click',function(){ inputNumber(2); });
-    $('.button_3').on('click',function(){ inputNumber(3); });
-    $('.button_4').on('click',function(){ inputNumber(4); });
-    $('.button_5').on('click',function(){ inputNumber(5); });
-    $('.button_6').on('click',function(){ inputNumber(6); });
-    $('.button_7').on('click',function(){ inputNumber(7); });
-    $('.button_8').on('click',function(){ inputNumber(8); });
-    $('.button_9').on('click',function(){ inputNumber(9); });
-    $('.button_decimal').on('click',function(){ inputDecimal(); });
-    $('.button_pi').on('click',function(){ inputPi(); });
-    $('.button_clear').on('click',function(){ actionClear(); });
-    $('.button_percent').on('click',function(){ actionPercent(); });
-    $('.button_sum').on('click',function(){ operator('+'); });
-    $('.button_sub').on('click',function(){ operator('-'); });
-    $('.button_mul').on('click',function(){ operator('*'); });
-    $('.button_div').on('click',function(){ operator('/'); });
-    $('.button_equal').on('click',function(){ actionEqual(); });
-    $('.button_inverse').on('click',function(){ actionInverse(); });
-    $('.button_reciprocal').on('click',function(){ actionReciprocal(); });
-    $('.button_square').on('click',function(){ actionSquare(); });
-    $('.button_squareroot').on('click',function(){ actionSquareroot(); });
-    $('.button_memoryclear').on('click',function(){ memoryClear(); });
-    $('.button_memoryrecall').on('click',function(){ memoryRecall(); });
-    $('.button_memorysum').on('click',function(){ memorySum(); });
-    $('.button_memorysub').on('click',function(){ memorySub(); });
+    $('.button_0').on('click', function() {
+        inputNumber(0);
+    });
+    $('.button_1').on('click', function() {
+        inputNumber(1);
+    });
+    $('.button_2').on('click', function() {
+        inputNumber(2);
+    });
+    $('.button_3').on('click', function() {
+        inputNumber(3);
+    });
+    $('.button_4').on('click', function() {
+        inputNumber(4);
+    });
+    $('.button_5').on('click', function() {
+        inputNumber(5);
+    });
+    $('.button_6').on('click', function() {
+        inputNumber(6);
+    });
+    $('.button_7').on('click', function() {
+        inputNumber(7);
+    });
+    $('.button_8').on('click', function() {
+        inputNumber(8);
+    });
+    $('.button_9').on('click', function() {
+        inputNumber(9);
+    });
+    $('.button_decimal').on('click', function() {
+        inputDecimal();
+    });
+    $('.button_pi').on('click', function() {
+        inputPi();
+    });
+    $('.button_clear').on('click', function() {
+        actionClear();
+    });
+    $('.button_percent').on('click', function() {
+        actionPercent();
+    });
+    $('.button_sum').on('click', function() {
+        operator('+');
+    });
+    $('.button_sub').on('click', function() {
+        operator('-');
+    });
+    $('.button_mul').on('click', function() {
+        operator('*');
+    });
+    $('.button_div').on('click', function() {
+        operator('/');
+    });
+    $('.button_equal').on('click', function() {
+        actionEqual();
+    });
+    $('.button_inverse').on('click', function() {
+        actionInverse();
+    });
+    $('.button_reciprocal').on('click', function() {
+        actionReciprocal();
+    });
+    $('.button_square').on('click', function() {
+        actionSquare();
+    });
+    $('.button_squareroot').on('click', function() {
+        actionSquareroot();
+    });
+    $('.button_memoryclear').on('click', function() {
+        memoryClear();
+    });
+    $('.button_memoryrecall').on('click', function() {
+        memoryRecall();
+    });
+    $('.button_memorysum').on('click', function() {
+        memorySum();
+    });
+    $('.button_memorysub').on('click', function() {
+        memorySub();
+    });
 });

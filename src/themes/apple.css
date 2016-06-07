@@ -1,6 +1,10 @@
 /*
 QUICKALC Apple Theme
 */
+
+body {
+  background-color:#333;
+}
 .result {
     background: #333;
     color: #eee;

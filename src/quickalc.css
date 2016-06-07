@@ -54,14 +54,20 @@ table {
 #calculator {}
 .result {
     font-family: Lato, Roboto, Arial;
-    font-size: 15vh;
-    font-weight:300;
+    font-size: 13vh;
+    font-weight: 300;
     text-align: right;
     padding-right: 3vw;
     line-height: 20vh;
     height: 20vh;
     width: 100%;
     box-sizing: border-box;
+    transition: 0.1s font-size ease;
+}
+@media all and (max-width: 450px) {
+    .result {
+        font-size: 10vh;
+    }
 }
 .button {
     -moz-user-select: none;
