@@ -1,0 +1,34 @@
+/*
+HTML5-CALCULATOR Apple Theme
+*/
+.result {
+    background: #333;
+    color: #eee;
+}
+#memory {
+    color: #666;
+}
+.button {
+  color:#333;
+  font-weight:300;
+  background-color:#d6d6d6;
+  /*border-bottom: 3px solid #555;*/
+  border-right: 1px solid #8e8e8e;
+  border-top: 1px solid #8e8e8e;
+}
+.button.clear {
+  /*background-color: #f5923e;*/
+}
+.button.memory {
+    /*background-color: #f5923e;*/
+}
+.button.number {
+    background-color: #e0e0e0;
+}
+.button.operator {
+    background-color: #f5923e;
+    color:#fff;
+}
+.button.equal {
+    /*background-color: #f5923e;*/
+}
