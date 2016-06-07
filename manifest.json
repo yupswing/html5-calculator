@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "HTML5-Calculator",
+    "description": "Simple calculator",
+    "version": "1.0",
+    "icons": {
+        "128": "128.png"
+    },
+    "app": {
+        "urls": [
+            "http://simonecingano.it/"
+        ],
+        "launch": {
+            "web_url": "http://simonecingano.it/apps/html5-calculator/"
+        }
+    },
+    "permissions": [],
+}
