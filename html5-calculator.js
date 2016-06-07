@@ -23,7 +23,6 @@ var is_last_operator_equal = false; // last action was EQUAL
 var is_error = false; // There was an error (only way is to CLEAR)
 
 function _update() {
-    console.log(is_error);
     if (is_error) {
         $('#display').html({
             'NAN': 'Not a number',
@@ -32,7 +31,7 @@ function _update() {
         $('#clear').html(CLEAR_ALL);
         return;
     }
-    console.log('BUFFER: ' + buffer_input + ' | REGISTRY_MAIN: ' + registry_main + ' | OPERATOR: ' + registry_operator + ' | REGISTRY_INPUT: ' + registry_input);
+    // console.log('BUFFER: ' + buffer_input + ' | REGISTRY_MAIN: ' + registry_main + ' | OPERATOR: ' + registry_operator + ' | REGISTRY_INPUT: ' + registry_input);
     if (has_to_show_registry_main) {
         $('#display').html(parseFloat(registry_main).toFixed(15).replace(/\.?0+$/, ''));
     } else {
@@ -64,6 +63,10 @@ function _update() {
 function operator(op, opequal) {
     has_to_all_clear = true;
     if (is_error) return;
+    if (!opequal && !is_last_operator_equal && has_to_show_registry_main) {
+      // avoid multi operator (example: x+*...)
+      return;
+    }
 
     if (isNull(registry_main) && isNull(buffer_input)) {
         buffer_input = 0;
@@ -72,6 +75,7 @@ function operator(op, opequal) {
         // avoid EQUAL without an input (example: x+y=z => z+=)
         return;
     }
+
     has_to_show_registry_main = true;
 
     var _input_number = parseFloat(buffer_input);
@@ -387,59 +391,86 @@ function inputDecimal() {
     _input();
 }
 
-$(document).on("keyup", function(e) {
-    if (e.which == 8) {
-        inputBack();
-    }
-});
-
-$(document).on("keypress", function(e) {
-    console.log(e.which);
-    if (e.which >= 48 && e.which <= 58) {
-        inputNumber(e.which - 48);
-        return;
-    }
-    switch (e.which) {
-        case 13:
-        case 32:
-        case 61: // space or return or =
-            actionEqual();
-            break;
-        case 99: // c
-            actionClear();
-            break;
-        case 46:
-        case 44: // . or ,
-            inputDecimal();
-            break;
-        case 43: // +
-            operator('+');
-            break;
-        case 45: // -
-            operator('-');
-            break;
-        case 42: // *
-            operator('*');
-            break;
-        case 47: // /
-            operator('/');
-            break;
-        case 100: // d
-            inputBack();
-            break;
-        case 37: // %
-            actionPercent();
-            break;
-        case 112: // P
-            inputPi();
-            break;
-    }
-});
-
 var isNull = function(obj) {
     return obj === null;
 };
 
 $(function() {
     _update();
+
+    //LISTENERS
+    $(document).on("keyup", function(e) {
+        if (e.which == 8) {
+            inputBack();
+        }
+    });
+
+    $(document).on("keypress", function(e) {
+        if (e.which >= 48 && e.which <= 58) {
+            inputNumber(e.which - 48);
+            return;
+        }
+        switch (e.which) {
+            case 13:
+            case 32:
+            case 61: // space or return or =
+                actionEqual();
+                break;
+            case 99: // c
+                actionClear();
+                break;
+            case 46:
+            case 44: // . or ,
+                inputDecimal();
+                break;
+            case 43: // +
+                operator('+');
+                break;
+            case 45: // -
+                operator('-');
+                break;
+            case 42: // *
+                operator('*');
+                break;
+            case 47: // /
+                operator('/');
+                break;
+            case 100: // d
+                inputBack();
+                break;
+            case 37: // %
+                actionPercent();
+                break;
+            case 112: // P
+                inputPi();
+                break;
+        }
+    });
+    $('.button_0').on('click',function(){ inputNumber(0); });
+    $('.button_1').on('click',function(){ inputNumber(1); });
+    $('.button_2').on('click',function(){ inputNumber(2); });
+    $('.button_3').on('click',function(){ inputNumber(3); });
+    $('.button_4').on('click',function(){ inputNumber(4); });
+    $('.button_5').on('click',function(){ inputNumber(5); });
+    $('.button_6').on('click',function(){ inputNumber(6); });
+    $('.button_7').on('click',function(){ inputNumber(7); });
+    $('.button_8').on('click',function(){ inputNumber(8); });
+    $('.button_9').on('click',function(){ inputNumber(9); });
+    $('.button_decimal').on('click',function(){ inputDecimal(); });
+    $('.button_pi').on('click',function(){ inputPi(); });
+    $('.button_clear').on('click',function(){ actionClear(); });
+    $('.button_percent').on('click',function(){ actionPercent(); });
+    $('.button_sum').on('click',function(){ operator('+'); });
+    $('.button_sub').on('click',function(){ operator('-'); });
+    $('.button_mul').on('click',function(){ operator('*'); });
+    $('.button_div').on('click',function(){ operator('/'); });
+    $('.button_equal').on('click',function(){ actionEqual(); });
+    $('.button_inverse').on('click',function(){ actionInverse(); });
+    $('.button_reciprocal').on('click',function(){ actionReciprocal(); });
+    $('.button_square').on('click',function(){ actionSquare(); });
+    $('.button_squareroot').on('click',function(){ actionSquareroot(); });
+    $('.button_memoryclear').on('click',function(){ memoryClear(); });
+    $('.button_memoryrecall').on('click',function(){ memoryRecall(); });
+    $('.button_memorysum').on('click',function(){ memorySum(); });
+    $('.button_memorysub').on('click',function(){ memorySub(); });
 });

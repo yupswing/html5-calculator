@@ -43,8 +43,8 @@ table {
 #memory {
     display: block;
     position: absolute;
-    left: 10px;
-    font-size: 50%;
+    left: 3vw;
+    font-size: 30%;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -57,7 +57,7 @@ table {
     font-size: 15vh;
     font-weight:300;
     text-align: right;
-    padding: 0 20px;
+    padding-right: 3vw;
     line-height: 20vh;
     height: 20vh;
     width: 100%;
