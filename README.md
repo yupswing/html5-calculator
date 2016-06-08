@@ -3,5 +3,4 @@ A pure HTML5 simple calculator (MIT Licence)
 
 See a live version [here](http://simonecingano.it/apps/quickalc/src/)
 
-Install it as a Chrome App from [this link](http://simonecingano.it/apps/quickalc/build/quickalc.crx)
-(Right click on the link, SAVE AS, then drag it to the Extensions panel in Chrome)
+Install it as a Chrome App from [this link](https://chrome.google.com/webstore/detail/quickalc/doedhndepealgpgfkbpchgloejgpmfjj)

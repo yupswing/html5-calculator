@@ -3,7 +3,7 @@
 QuickCalc by Simone Cingano
 A simple calculator written in pure HTML5
 Licence: MIT
-Version: 1.0
+Version: 1.0.1
 Repository: https://github.com/yupswing/quickalc
 
 */
@@ -286,7 +286,7 @@ function memoryRecall() {
 
 function actionInfo() {
     setTimeout(function() {
-        window.open('http://simonecingano.it/')
+        window.open('http://simonecingano.it/apps/quickalc/')
     }, 100);
     _highlight('button_info');
 }
