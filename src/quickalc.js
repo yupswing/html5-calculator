@@ -468,7 +468,6 @@ $(function() {
         }
     });
 
-
     $(document).on("keyup", function(e) {
         if (e.which == 8) {
             inputBack();
@@ -513,6 +512,30 @@ $(function() {
                 break;
             case 112: // P
                 inputPi();
+                break;
+            case 94: // ^
+                actionSquare();
+                break;
+                actionSquareroot();
+                break;
+            case 109: // M
+                memoryRecall();
+                break;
+            case 110: // N
+                memoryClear();
+                break;
+            case 106: // J
+                memorySub();
+                break;
+            case 107: // K
+                memorySum();
+                break;
+            case 114: // R
+            case 120: // X
+                actionReciprocal();
+                break;
+            case 105: // I
+                actionInverse();
                 break;
         }
     });
