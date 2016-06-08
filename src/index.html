@@ -4,7 +4,7 @@
 QuickCalc by Simone Cingano
 A simple calculator written in pure HTML5
 Licence: MIT
-Version: 1.0.1
+Version: 1.1.0
 Repository: https://github.com/yupswing/quickalc
 
 -->
@@ -15,7 +15,8 @@ Repository: https://github.com/yupswing/quickalc
         <meta name="description" content="">
         <meta name="author" content="Simone Cingano">
         <link href="quickalc.css" rel="stylesheet">
-        <link href="themes/default.css" rel="stylesheet">
+        <!-- <link href="themes/default.css" rel="stylesheet"> -->
+        <link href="themes/apple.css" rel="stylesheet">
         <link rel="icon" type="image/png" href="128.png"/>
     </head>
 
@@ -23,7 +24,6 @@ Repository: https://github.com/yupswing/quickalc
         <div id="calculator">
             <div class="row">
                 <div class="result">
-                    <span id="memory"></span>
                     <span id="buffer"></span>
                     <span id="display"></span>
                 </div>
@@ -94,7 +94,7 @@ Repository: https://github.com/yupswing/quickalc
 
             <div class="row">
                 <div class="button button_memoryrecall memory">
-                    MR
+                    <span>MR</span>
                 </div>
                 <div class="button button_reciprocal">
                     1/x
@@ -131,6 +131,7 @@ Repository: https://github.com/yupswing/quickalc
         </div>
         <script src="lib/jquery.min.js"></script>
         <script src="lib/jquery-ui.min.js"></script>
+        <script src="lib/bignumber.min.js"></script>
         <script src="quickalc.js"></script>
     </body>
 </html>

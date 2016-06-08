@@ -3,17 +3,17 @@
 QuickCalc by Simone Cingano
 A simple calculator written in pure HTML5
 Licence: MIT
-Version: 1.0.1
+Version: 1.1.0
 Repository: https://github.com/yupswing/quickalc
 
 */
 
 @font-face {
-  font-family: 'Lato';
-  src: url(fonts/lato-hairline/lato-hairline.eot);
-  src: local('Lato Hairline'), local('Lato-Hairline'), url(fonts/lato-hairline/lato-hairline.eot?#iefix) format('embedded-opentype'), url(fonts/lato-hairline/lato-hairline.woff2) format('woff2'), url(fonts/lato-hairline/lato-hairline.woff) format('woff'), url(fonts/lato-hairline/lato-hairline.ttf) format('truetype'), url(fonts/lato-hairline/lato-hairline.svg#lato) format('svg');
-  font-weight: 100;
-  font-style: normal;
+    font-family: 'Lato';
+    src: url(fonts/lato-hairline/lato-hairline.eot);
+    src: local('Lato Hairline'), local('Lato-Hairline'), url(fonts/lato-hairline/lato-hairline.eot?#iefix) format('embedded-opentype'), url(fonts/lato-hairline/lato-hairline.woff2) format('woff2'), url(fonts/lato-hairline/lato-hairline.woff) format('woff'), url(fonts/lato-hairline/lato-hairline.ttf) format('truetype'), url(fonts/lato-hairline/lato-hairline.svg#lato) format('svg');
+    font-weight: 100;
+    font-style: normal;
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -34,6 +34,9 @@ body {
     line-height: 1;
     font-family: 'Lato';
     font-weight: 100;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 ol, ul {
     list-style: none;
@@ -54,10 +57,13 @@ table {
     position: absolute;
     left: 3vw;
     font-size: 30%;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
+}
+#buffer {
+    position: absolute;
+    top: -7vh;
+    right: 3vw;
+    font-size: 3vh;
 }
 #display {}
 #calculator {}
@@ -77,10 +83,7 @@ table {
     }
 }
 .button {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    display: block;
+    -user-select display: block;
     user-select: none;
     line-height: 16vh;
     text-align: center;
@@ -113,4 +116,23 @@ table {
 .row {
     clear: both;
     position: relative;
+}
+.button_memoryrecall span {
+    z-index: 101;
+    position: relative;
+}
+.button_memoryrecall:after {
+    z-index: 100;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 0 solid transparent;
+}
+.button_memoryrecall:after {
+    transition: .2s all ease;
+    /*transition-property: border-left-width, border-bottom-width;*/
+}
+#buffer.flash, #display.flash, .button_memoryrecall.flash:after {
+    opacity: 0;
 }

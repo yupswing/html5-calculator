@@ -12,15 +12,22 @@ body {
 #memory {
     color: #bbb;
 }
+#buffer {
+    color: #aaa;
+}
 .button {
     color: #fff;
     background-color: #404040;
+    border: 0vh solid transparent;
     /*border-right: 1px solid #8e8e8e;*/
     /*border-top: 1px solid #8e8e8e;*/
 }
-.button.clear {}
 .button.memory {
     background-color: #55779a;
+}
+.button_memoryrecall.has_memory:after {
+    border-right: 10vw solid transparent;
+    border-bottom: 10vh solid #829dba;
 }
 .button.info {
     background-color: #4d4d4d;
@@ -31,6 +38,9 @@ body {
 .button.operator {
     background-color: #ce6b16;
 }
+.button.clear {
+    background-color: #79423a;
+}
 .button.equal {}
 .button.pressed {
     background-color: #595959;
@@ -40,4 +50,7 @@ body {
 }
 .button.memory.pressed {
     background-color: #829dba;
+}
+.button.clear.pressed {
+    background-color: #ac5f54;
 }

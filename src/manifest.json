@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Quickalc",
     "description": "A simple calculator by Simone Cingano",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "icons": {
         "128": "128.png"
     },
@@ -11,5 +11,9 @@
             "scripts": ["background.js"]
         }
     },
-    "permissions": []
+    "permissions": [
+        "clipboardWrite",
+        "clipboardRead",
+        "storage"
+    ]
 }

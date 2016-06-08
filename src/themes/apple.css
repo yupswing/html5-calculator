@@ -22,11 +22,9 @@ body {
 .button.last {
   border-right:0;
 }
-.button.clear {
-    /*background-color: #f5923e;*/
-}
-.button.memory {
-    /*background-color: #f5923e;*/
+.button_memoryrecall.has_memory:after {
+  border-right: 10vh solid transparent;
+  border-bottom: 10vh solid #aaa;
 }
 .button.number {
     background-color: #e0e0e0;
@@ -34,9 +32,6 @@ body {
 .button.operator {
     background-color: #f5923e;
     color: #eee;
-}
-.button.equal {
-    /*background-color: #f5923e;*/
 }
 .button.pressed {
     background-color: #999;
