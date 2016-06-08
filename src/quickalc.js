@@ -54,9 +54,6 @@ function _update() {
         $('#display').html(buffer_input || 0);
     }
     if (registry_operator) {
-        // if (registry_input) {
-        // $('#buffer').html(parseFloat(registry_main).toFixed(15).replace(/\.?0+$/, '') + ' ' + registry_operator + ' ' + registry_input);
-        // } else {
         if (!isNull(buffer_input) && buffer_input !== NULL_BUFFER_INPUT) {
             $('#buffer').html(registry_main.toFormat() + ' ' + _operatorFormat(registry_operator));
         } else if (!isNull(registry_input)) {
@@ -110,7 +107,6 @@ function operator(op, opequal) {
 
     var _input_number = new BigNumber(buffer_input || 0);
     if (_input_number.isNaN()) _input_number = new BigNumber(0);
-    console.log(_input_number);
     buffer_input = null;
 
     if (!opequal && is_last_operator_equal) {

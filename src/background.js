@@ -1,7 +1,5 @@
 chrome.app.runtime.onLaunched.addListener(function() {
     chrome.storage.local.get('bounds', function(obj) {
-        console.log('storage get');
-        console.log(obj);
         var bounds = {
             'width': 550,
             'height': 400,
@@ -14,7 +12,6 @@ chrome.app.runtime.onLaunched.addListener(function() {
             bounds.top = obj.bounds.top;
             bounds.left = obj.bounds.left;
         }
-        console.log(obj.bounds);
         chrome.app.window.create('index.html', {
             'id': 'quickalc',
             'outerBounds': bounds
@@ -31,7 +28,6 @@ chrome.app.window.onClosed.addListener(function() {
         top: outerBounds.top,
         left: outerBounds.left
     };
-    console.log(outerBounds);
     chrome.storage.local.set({
         'bounds': bounds,
     });
