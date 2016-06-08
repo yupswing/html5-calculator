@@ -1,7 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Quickalc",
-    "description": "A simple calculator by Simone Cingano",
+    "name": "Quickalc - The easy calculator",
+    "short_name": "Quickalc",
+    "author": "Simone Cingano",
+    "description": "A nice simple calculator",
     "version": "1.1.0",
     "icons": {
         "128": "128.png"
