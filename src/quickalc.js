@@ -240,8 +240,10 @@ function memorySum() {
     if (is_error) return;
     if (isNull(registry_memory)) registry_memory = 0;
     if (has_to_show_registry_main) {
+        if (!registry_main) return;
         registry_memory += registry_main;
     } else {
+        if (buffer_input === '0') return;
         registry_memory += parseFloat(buffer_input || 0);
     }
     _highlightMemory();
@@ -253,8 +255,10 @@ function memorySub() {
     if (is_error) return;
     if (isNull(registry_memory)) registry_memory = 0;
     if (has_to_show_registry_main) {
+        if (!registry_main) return;
         registry_memory -= registry_main;
     } else {
+        if (buffer_input === '0') return;
         registry_memory -= parseFloat(buffer_input || 0);
     }
     _highlightMemory();
@@ -278,6 +282,13 @@ function memoryRecall() {
     _highlightDisplay();
     _highlight('button_memoryrecall');
     _input();
+}
+
+function actionInfo() {
+    setTimeout(function() {
+        window.open('http://simonecingano.it/')
+    }, 100);
+    _highlight('button_info');
 }
 
 function _input() {
@@ -319,18 +330,26 @@ function actionClear() {
     _update();
 }
 
+var timeouts = {};
+
 function _highlight(cls) {
     var obj = $('.' + cls);
-    obj.finish();
-    var color = obj.css('color');
-    var backgroundColor = obj.css('backgroundColor');
-    obj.css({
-        'backgroundColor': '#fff',
-        'color': '#ddd'
-    }).animate({
-        'backgroundColor': backgroundColor,
-        'color': color,
-    }, 400, 'easeOutExpo');
+    if (timeouts.hasOwnProperty(cls)) {
+        if (timeouts[cls]) clearTimeout(timeouts[cls]);
+    }
+    obj.removeClass('pressed').addClass('pressed');
+    timeouts[cls] = setTimeout(function() {
+        obj.removeClass('pressed')
+    }, 100);
+    // var color = obj.css('color');
+    // var backgroundColor = obj.css('backgroundColor');
+    // obj.css({
+    //     'backgroundColor': '#fff',
+    //     'color': '#ddd'
+    // }).animate({
+    //     'backgroundColor': backgroundColor,
+    //     'color': color,
+    // }, 400, 'easeOutExpo');
 }
 
 function _highlightDisplay() {
@@ -446,85 +465,88 @@ $(function() {
                 break;
         }
     });
-    $('.button_0').on('click', function() {
+    $('.button_0').on('mousedown', function() {
         inputNumber(0);
     });
-    $('.button_1').on('click', function() {
+    $('.button_1').on('mousedown', function() {
         inputNumber(1);
     });
-    $('.button_2').on('click', function() {
+    $('.button_2').on('mousedown', function() {
         inputNumber(2);
     });
-    $('.button_3').on('click', function() {
+    $('.button_3').on('mousedown', function() {
         inputNumber(3);
     });
-    $('.button_4').on('click', function() {
+    $('.button_4').on('mousedown', function() {
         inputNumber(4);
     });
-    $('.button_5').on('click', function() {
+    $('.button_5').on('mousedown', function() {
         inputNumber(5);
     });
-    $('.button_6').on('click', function() {
+    $('.button_6').on('mousedown', function() {
         inputNumber(6);
     });
-    $('.button_7').on('click', function() {
+    $('.button_7').on('mousedown', function() {
         inputNumber(7);
     });
-    $('.button_8').on('click', function() {
+    $('.button_8').on('mousedown', function() {
         inputNumber(8);
     });
-    $('.button_9').on('click', function() {
+    $('.button_9').on('mousedown', function() {
         inputNumber(9);
     });
-    $('.button_decimal').on('click', function() {
+    $('.button_decimal').on('mousedown', function() {
         inputDecimal();
     });
-    $('.button_pi').on('click', function() {
+    $('.button_pi').on('mousedown', function() {
         inputPi();
     });
-    $('.button_clear').on('click', function() {
+    $('.button_clear').on('mousedown', function() {
         actionClear();
     });
-    $('.button_percent').on('click', function() {
+    $('.button_percent').on('mousedown', function() {
         actionPercent();
     });
-    $('.button_sum').on('click', function() {
+    $('.button_sum').on('mousedown', function() {
         operator('+');
     });
-    $('.button_sub').on('click', function() {
+    $('.button_sub').on('mousedown', function() {
         operator('-');
     });
-    $('.button_mul').on('click', function() {
+    $('.button_mul').on('mousedown', function() {
         operator('*');
     });
-    $('.button_div').on('click', function() {
+    $('.button_div').on('mousedown', function() {
         operator('/');
     });
-    $('.button_equal').on('click', function() {
+    $('.button_equal').on('mousedown', function() {
         actionEqual();
     });
-    $('.button_inverse').on('click', function() {
+    $('.button_inverse').on('mousedown', function() {
         actionInverse();
     });
-    $('.button_reciprocal').on('click', function() {
+    $('.button_reciprocal').on('mousedown', function() {
         actionReciprocal();
     });
-    $('.button_square').on('click', function() {
+    $('.button_square').on('mousedown', function() {
         actionSquare();
     });
-    $('.button_squareroot').on('click', function() {
+    $('.button_squareroot').on('mousedown', function() {
         actionSquareroot();
     });
-    $('.button_memoryclear').on('click', function() {
+    $('.button_memoryclear').on('mousedown', function() {
         memoryClear();
     });
-    $('.button_memoryrecall').on('click', function() {
+    $('.button_memoryrecall').on('mousedown', function() {
         memoryRecall();
     });
-    $('.button_memorysum').on('click', function() {
+    $('.button_memorysum').on('mousedown', function() {
         memorySum();
     });
-    $('.button_memorysub').on('click', function() {
+    $('.button_memorysub').on('mousedown', function() {
         memorySub();
+    });
+    $('.button_info').on('mousedown', function() {
+        actionInfo();
     });
 });

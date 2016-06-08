@@ -8,6 +8,13 @@ Repository: https://github.com/yupswing/quickalc
 
 */
 
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-hairline/lato-hairline.eot);
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(fonts/lato-hairline/lato-hairline.eot?#iefix) format('embedded-opentype'), url(fonts/lato-hairline/lato-hairline.woff2) format('woff2'), url(fonts/lato-hairline/lato-hairline.woff) format('woff'), url(fonts/lato-hairline/lato-hairline.ttf) format('truetype'), url(fonts/lato-hairline/lato-hairline.svg#lato) format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -25,6 +32,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 body {
     line-height: 1;
+    font-family: 'Lato';
+    font-weight: 100;
 }
 ol, ul {
     list-style: none;
@@ -53,9 +62,7 @@ table {
 #display {}
 #calculator {}
 .result {
-    font-family: Lato, Roboto, Arial;
     font-size: 13vh;
-    font-weight: 300;
     text-align: right;
     padding-right: 3vw;
     line-height: 20vh;
@@ -73,19 +80,20 @@ table {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
+    display: block;
     user-select: none;
-    font-family: Lato, Roboto, Arial;
     line-height: 16vh;
     text-align: center;
     width: 16.5vw;
     height: 16vh;
     box-sizing: border-box;
-    background: red;
-    color: white;
     float: left;
     font-size: 10vh;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
+    transition: 0.05s all ease-out;
+    transition-property: background-color, color;
 }
 .button.long {
     width: 33vw;
@@ -95,6 +103,12 @@ table {
 }
 .button.last.long {
     width: 34vw;
+}
+.button_0.long {
+    padding-right: 16.5vw;
+}
+.button.info {
+    font-size: 5vh;
 }
 .row {
     clear: both;

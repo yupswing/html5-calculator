@@ -1,0 +1,43 @@
+/*
+QUICKALC Default Theme
+*/
+
+body {
+    background-color: #333;
+}
+.result {
+    background: #333;
+    color: #fff;
+}
+#memory {
+    color: #bbb;
+}
+.button {
+    color: #fff;
+    background-color: #404040;
+    /*border-right: 1px solid #8e8e8e;*/
+    /*border-top: 1px solid #8e8e8e;*/
+}
+.button.clear {}
+.button.memory {
+    background-color: #55779a;
+}
+.button.info {
+    background-color: #4d4d4d;
+}
+.button.number {
+    background-color: #333;
+}
+.button.operator {
+    background-color: #ce6b16;
+}
+.button.equal {}
+.button.pressed {
+    background-color: #595959;
+}
+.button.operator.pressed {
+    background-color: #eb9245;
+}
+.button.memory.pressed {
+    background-color: #829dba;
+}
