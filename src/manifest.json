@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "Quickalc - The easy calculator",
-    "short_name": "Quickalc",
+    "name": "Quickalc",
     "author": "Simone Cingano",
-    "description": "A nice simple calculator",
-    "version": "1.1.0",
+    "description": "A nice, quick, 100% offline calculator with complete keyboard support",
+    "version": "1.2.0",
     "icons": {
         "128": "128.png"
     },
+    "offline_enabled": true,
     "app": {
         "background": {
             "scripts": ["background.js"]
