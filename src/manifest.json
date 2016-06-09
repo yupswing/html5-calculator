@@ -3,7 +3,7 @@
     "name": "Quickalc",
     "author": "Simone Cingano",
     "description": "A nice, quick, 100% offline calculator with complete keyboard support",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "icons": {
         "128": "128.png"
     },

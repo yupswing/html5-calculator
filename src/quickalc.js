@@ -3,7 +3,7 @@
 QuickCalc by Simone Cingano
 A simple calculator written in pure HTML5
 Licence: MIT
-Version: 1.2.0
+Version: 1.2.2
 Repository: https://github.com/yupswing/quickalc
 
 */
@@ -482,6 +482,7 @@ $(function() {
                 actionEqual();
                 break;
             case 99: // c
+            case 46: // DEL
                 actionClear();
                 break;
             case 46:
