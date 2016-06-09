@@ -22,7 +22,7 @@ It uses BigNumbers.js as numeric library.
 - `.` Decimal
 - `+`, `-`, `*`, `/` Operators
 - `=`, `return`, `space` Equals
-- `C` Clear all / Clear
+- `C`, `DEL` Clear all / Clear
 - `%` Percent
 - `I` +/-
 - `S` Square root
