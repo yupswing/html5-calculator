@@ -465,8 +465,13 @@ $(function() {
     });
 
     $(document).on("keyup", function(e) {
-        if (e.which == 8) {
-            inputBack();
+        switch (e.which) {
+            case 8: // BACKSPACE
+                inputBack();
+                break;
+            case 46: // DELETE
+                actionClear();
+                break;
         }
     });
 
@@ -482,11 +487,10 @@ $(function() {
                 actionEqual();
                 break;
             case 99: // c
-            case 46: // DEL
                 actionClear();
                 break;
-            case 46:
-            case 44: // . or ,
+            case 46: //
+            case 44: // .
                 inputDecimal();
                 break;
             case 43: // +
